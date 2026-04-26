@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Hacker Dashboard</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+
+  <div class="top-bar">
+  <div class="left">👩‍🏫 Submitted to: Prashasti Ma'am</div>
+  <div class="right">🧑‍💻 By: Siddhant Sengar</div>
+</div>
+
+<canvas id="matrix"></canvas>
+
+<h1 class="title">💻 Hacker Dashboard</h1>
+
+<div class="grid">
+
+<!-- ALL QUESTIONS SAME AS BEFORE -->
+<!-- (Copy your previous question cards here — no change needed) -->
+
+
+
+
+
+
+  <!-- Q1 -->
+  <div class="card">
+    <h2>1. Prime / Even / Odd</h2>
+    <input id="num1" placeholder="Enter number">
+    <button onclick=" checkNumber()">Run</button>
+    <p id="out1"></p>
+
+    <div class="check-box">
+  <span>Evaluation:</span>
+  <button onclick=" mark(this,'correct')">✔ Correct</button>
+  <button onclick=" mark(this,'wrong')">✖ Wrong</button>
+</div>
+
+  </div>
+
+  <!-- Q2 -->
+  <div class="card">
+    <h2>2. Factorial</h2>
+    <input id="fact" placeholder="Enter number">
+    <button onclick="factorial()">Run</button>
+    <p id="out2"></p>
+
+  <div class="check-box">
+  <span>Evaluation:</span>
+  <button onclick=" mark(this,'correct')">✔ Correct</button>
+  <button onclick=" mark(this,'wrong')">✖ Wrong</button>
+   </div>
+  </div>
+
+  <!-- Q3 -->
+  <div class="card">
+    <h2>3. Fibonacci</h2>
+    <input id="fib" placeholder="Enter terms">
+    <button onclick=" fibonacci()">Run</button>
+    <p id="out3"></p>
+
+    <div class="check-box">
+  <span>Evaluation:</span>
+  <button onclick=" mark(this,'correct')">✔ Correct</button>
+  <button onclick=" mark(this,'wrong')">✖ Wrong</button>
+</div>
+  </div>
+
+  <!-- Q4 -->
+  <div class="card">
+    <h2>4. Second Largest</h2>
+    <input id="arr" placeholder="e.g 1,5,8,3">
+    <button onclick=" secondLargest()">Run</button>
+    <p id="out4"></p>
+
+    <div class="check-box">
+  <span>Evaluation:</span>
+  <button onclick=" mark(this,'correct')">✔ Correct</button>
+  <button onclick=" mark(this,'wrong')">✖ Wrong</button>
+</div>
+  </div>
+
+  <!-- Q5 -->
+  <div class="card">
+    <h2>5. Remove Duplicates</h2>
+    <input id="dup" placeholder="e.g 1,2,2,3">
+    <button onclick=" removeDup()">Run</button>
+    <p id="out5"></p>
+
+    <div class="check-box">
+  <span>Evaluation:</span>
+  <button onclick=" mark(this,'correct')">✔ Correct</button>
+  <button onclick=" mark(this,'wrong')">✖ Wrong</button>
+</div>
+  </div>
+
+  <!-- Q6 -->
+  <div class="card">
+    <h2>6. Palindrome</h2>
+    <input id="pal" placeholder="Enter string">
+    <button onclick=" palindrome()">Run</button>
+    <p id="out6"></p>
+
+    <div class="check-box">
+  <span>Evaluation:</span>
+  <button onclick=" mark(this,'correct')">✔ Correct</button>
+  <button onclick=" mark(this,'wrong')">✖ Wrong</button>
+</div>
+  </div>
+
+  <!-- Q7 -->
+  <div class="card">
+    <h2>7. Calculator</h2>
+    <input id="a" placeholder="A">
+    <input id="b" placeholder="B">
+    <button onclick="calc('+')">+</button>
+    <button onclick="calc('-')">-</button>
+    <button onclick="calc('*')">*</button>
+    <button onclick="calc('/')">/</button>
+    <p id="out7"></p>
+
+    <div class="check-box">
+  <span>Evaluation:</span>
+  <button onclick=" mark(this,'correct')">✔ Correct</button>
+  <button onclick=" mark(this,'wrong')">✖ Wrong</button>
+</div>
+  </div>
+
+  <!-- Q8 FORM -->
+  <div class="card">
+    <h2>8. User Registration</h2>
+
+    <form id="form">
+      <input id="name" placeholder="Name"><br>
+      <input id="email" placeholder="Email"><br>
+      <input id="pass" type="password" placeholder="Password"><br>
+      <input id="cpass" type="password" placeholder="Confirm Password"><br>
+      <input id="age" placeholder="Age"><br>
+
+      <label><input type="radio" name="gender" value="Male"> Male</label>
+      <label><input type="radio" name="gender" value="Female"> Female</label><br>
+
+      <label><input type="checkbox" id="terms"> Accept Terms</label><br>
+
+      <button type="submit">Register</button>
+    </form>
+
+    <p id="out8"></p>
+
+
+    <div class="check-box">
+  <span>Evaluation:</span>
+  <button onclick=" mark(this,'correct')">✔ Correct</button>
+  <button onclick=" mark(this,'wrong')">✖ Wrong</button>
+</div>
+  </div>
+
+  <!-- Q9 -->
+  <div class="card">
+    <h2>9. Toggle Text</h2>
+    <button onclick=" toggleText()">Click</button>
+    <p id="toggle">Hello, World!</p>
+
+    <div class="check-box">
+  <span>Evaluation:</span>
+  <button onclick=" mark(this,'correct')">✔ Correct</button>
+  <button onclick=" mark(this,'wrong')">✖ Wrong</button>
+</div>
+  </div>
+
+  <!-- Q10 -->
+  <div class="card">
+    <h2 id="hover">10. Hover Effect (jQuery)</h2>
+
+    <div class="check-box">
+  <span>Evaluation:</span>
+  <button onclick=" mark(this,'correct')">✔ Correct</button>
+  <button onclick=" mark(this,'wrong')">✖ Wrong</button>
+</div>
+  </div>
+
+
+
+<div class="card">
+  <h2>📝 Teacher Feedback</h2>
+
+  <textarea id="comment" placeholder="Write feedback..." rows="4"></textarea>
+
+  <h3>⭐ Rating</h3>
+  <select id="rating">
+    <option>⭐</option>
+    <option>⭐⭐</option>
+    <option>⭐⭐⭐</option>
+    <option>⭐⭐⭐⭐</option>
+    <option>⭐⭐⭐⭐⭐</option>
+  </select>
+
+  <br><br>
+  <button onclick="submitFeedback()">Submit Review</button>
+  <button onclick="playClick();sendMail()">Send via Email</button>
+
+  <p id="finalMsg"></p>
+</div>
+
+
+</div>
+<audio id="clickSound" src="https://www.fesliyanstudios.com/play-mp3/4386"></audio>
+<audio id="successSound" src="https://www.fesliyanstudios.com/play-mp3/387"></audio>
+<script src="script.js"></script>
+</body>
+</html>
+

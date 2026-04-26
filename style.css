@@ -1,0 +1,196 @@
+body {
+  margin: 0;
+  font-family: 'Courier New', monospace;
+  background: black;
+  color: #00ffcc;
+  overflow-x: hidden;
+}
+
+/* MATRIX CANVAS */
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/* WELCOME PAGE */
+.welcome-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* GLASS BOX */
+.welcome-box {
+  text-align: center;
+  padding: 40px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  border: 1px solid #00ffcc;
+  box-shadow: 0 0 40px #00ffcc;
+}
+
+/* GLITCH TEXT */
+.glitch {
+  font-size: 2em;
+  text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+}
+
+.maam span {
+  color: #00ffcc;
+  font-weight: bold;
+}
+
+/* MAGIC BUTTON */
+.magic-btn {
+  margin-top: 20px;
+  padding: 12px 25px;
+  font-size: 16px;
+  border: none;
+  color: black;
+  background: linear-gradient(45deg, #00ffcc, #00ccff);
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 0 20px #00ffcc;
+  transition: 0.4s;
+}
+
+.magic-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 40px #00ffcc;
+}
+
+/* DASHBOARD */
+.title {
+  text-align: center;
+  margin-top: 20px;
+  text-shadow: 0 0 20px #00ffcc;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* CARD */
+.card {
+  background: rgba(0,0,0,0.7);
+  border: 1px solid #00ffcc;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px #00ffcc;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 0 40px #00ffcc;
+}
+
+/* INPUTS */
+input {
+  margin: 5px;
+  padding: 8px;
+  width: 90%;
+  background: black;
+  border: 1px solid #00ffcc;
+  color: #00ffcc;
+}
+
+/* PRO BUTTON */
+button {
+  padding: 8px 15px;
+  margin: 5px;
+  border: none;
+  background: transparent;
+  color: #00ffcc;
+  border: 1px solid #00ffcc;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+/* BUTTON GLOW EFFECT */
+button::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 0;
+  top: 0;
+  left: 0;
+  background: #00ffcc;
+  z-index: -1;
+  transition: 0.3s;
+}
+
+button:hover::before {
+  height: 100%;
+}
+
+button:hover {
+  color: black;
+}
+
+
+/* TOP BAR */
+.top-bar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  font-size: 14px;
+  background: rgba(0,0,0,0.6);
+  border-bottom: 1px solid #00ffcc;
+  z-index: 10;
+}
+
+.top-bar .left, .top-bar .right {
+  color: #00ffcc;
+  text-shadow: 0 0 10px #00ffcc;
+}
+
+.check-box {
+  margin-top: 10px;
+}
+
+.check-box button {
+  border: 1px solid #00ffcc;
+  margin: 3px;
+}
+
+.correct {
+  background: #00ffcc !important;
+  color: black !important;
+}
+
+.wrong {
+  background: red !important;
+  color: white !important;
+}
+
+
+textarea {
+  width: 95%;
+  background: black;
+  border: 1px solid #00ffcc;
+  color: #00ffcc;
+  padding: 10px;
+}
+
+select {
+  background: black;
+  color: #00ffcc;
+  border: 1px solid #00ffcc;
+  padding: 5px;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: 1s;
+}
