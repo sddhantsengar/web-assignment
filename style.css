@@ -194,3 +194,19 @@ select {
   opacity: 0;
   transition: 1s;
 }
+
+
+.github-link {
+  font-size: 12px;
+  color: #00ffcc;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 3px;
+  transition: 0.3s;
+}
+
+.github-link:hover {
+  color: white;
+  text-shadow: 0 0 10px #00ffcc;
+  transform: scale(1.05);
+}
