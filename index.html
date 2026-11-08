@@ -136,36 +136,43 @@
   <button onclick=" mark(this,'wrong')">✖ Wrong</button>
 </div>
   </div>
+  
 
-  <!-- Q8 FORM -->
-  <div class="card">
-    <h2>8. User Registration</h2>
+ <!-- Q8 FORM -->
+<div class="card">
+  <h2>8. User Registration</h2>
 
-    <form id="form">
-      <input id="name" placeholder="Name"><br>
-      <input id="email" placeholder="Email"><br>
-      <input id="pass" type="password" placeholder="Password"><br>
-      <input id="cpass" type="password" placeholder="Confirm Password"><br>
-      <input id="age" placeholder="Age"><br>
+  <form id="form">
+    <!-- CHANGE: added name="name" so the data can be sent to Google Sheets -->
+    <input id="name" name="name" placeholder="Name"><br>
+    <!-- CHANGE: added name="email" -->
+    <input id="email" name="email" placeholder="Email"><br>
+    <!-- NO CHANGE: password fields have no name on purpose, so they are NOT sent to the sheet -->
+    <input id="pass" type="password" placeholder="Password"><br>
+    <input id="cpass" type="password" placeholder="Confirm Password"><br>
+    <!-- CHANGE: added name="age" -->
+    <input id="age" name="age" placeholder="Age"><br>
 
-      <label><input type="radio" name="gender" value="Male"> Male</label>
-      <label><input type="radio" name="gender" value="Female"> Female</label><br>
+    <!-- NO CHANGE: gender radios already had name="gender" -->
+    <label><input type="radio" name="gender" value="Male"> Male</label>
+    <label><input type="radio" name="gender" value="Female"> Female</label><br>
 
-      <label><input type="checkbox" id="terms"> Accept Terms</label><br>
+    <!-- CHANGE: added name="terms" and value="Accepted" so the sheet shows "Accepted" -->
+    <label><input type="checkbox" id="terms" name="terms" value="Accepted"> Accept Terms</label><br>
 
-      <button type="submit">Register</button>
-    </form>
+    <button type="submit">Register</button>
+  </form>
 
-    <p id="out8"></p>
+  <p id="out8"></p>
 
-
-    <div class="check-box">
-  <span>Evaluation:</span>
-  <button onclick=" mark(this,'correct')">✔ Correct</button>
-  <button onclick=" mark(this,'wrong')">✖ Wrong</button>
-</div>
+  <div class="check-box">
+    <span>Evaluation:</span>
+    <button onclick=" mark(this,'correct')">✔ Correct</button>
+    <button onclick=" mark(this,'wrong')">✖ Wrong</button>
   </div>
+</div>
 
+  
   <!-- Q9 -->
   <div class="card">
     <h2>9. Toggle Text</h2>
