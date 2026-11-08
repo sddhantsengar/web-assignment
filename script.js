@@ -117,7 +117,11 @@ function calc(op) {
 }
 
 // Q8 VALIDATION
-document.getElementById("form").addEventListener("submit", function(e){
+// CHANGE: added a constant holding your Google Apps Script Web App URL
+const SHEET_URL = "https://script.google.com/macros/s/AKfycbw0oL6OvUDApUsViQCuRwEDTIvIpJuC0BSRhDnDz1gGTR3XlDIGOdIoT8U7qQd-HmJ1YA/exec";
+
+// CHANGE: made the function "async" so we can use "await" for the fetch call below
+document.getElementById("form").addEventListener("submit", async function(e){
   e.preventDefault();
 
   let name = document.getElementById("name").value;
@@ -128,6 +132,7 @@ document.getElementById("form").addEventListener("submit", function(e){
   let gender = document.querySelector('input[name="gender"]:checked');
   let terms = document.getElementById("terms").checked;
 
+  // NO CHANGE: your validation stays exactly the same
   if (!name.match(/^[A-Za-z]+$/)) return alert("Invalid Name");
   if (!email.match(/^\S+@\S+\.\S+$/)) return alert("Invalid Email");
   if (pass.length < 6) return alert("Password too short");
@@ -136,7 +141,25 @@ document.getElementById("form").addEventListener("submit", function(e){
   if (!gender) return alert("Select Gender");
   if (!terms) return alert("Accept Terms");
 
-  document.getElementById("out8").innerText = "✅ Registered Successfully";
+  // CHANGE: show a "submitting" message while data is being sent
+  document.getElementById("out8").innerText = "⏳ Submitting...";
+
+  // CHANGE: send the form data to Google Sheets
+  try {
+    await fetch(SHEET_URL, {
+      method: "POST",
+      body: new FormData(e.target), // collects every field that has a name="" attribute
+      mode: "no-cors"               // needed because Google Apps Script doesn't allow normal cross-site replies
+    });
+
+    // CHANGE: success message now shows only after the data was sent
+    document.getElementById("out8").innerText = "✅ Registered Successfully";
+    e.target.reset(); // CHANGE: clears the form after submit
+  } catch (err) {
+    // CHANGE: error message if the network request fails
+    document.getElementById("out8").innerText = "❌ Something went wrong. Try again.";
+    console.error(err);
+  }
 });
 
 // Q9
